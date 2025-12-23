@@ -1,0 +1,320 @@
+# ============================================
+# Python Credit Card Risk - .gitignore
+# ============================================
+
+# ---------------------------------------------
+# Python
+# ---------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ---------------------------------------------
+# IDEs and Editors
+# ---------------------------------------------
+# VSCode
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ---------------------------------------------
+# Operating System
+# ---------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ---------------------------------------------
+# Data Files (Large datasets)
+# ---------------------------------------------
+# CSV files (except sample files)
+data/*.csv
+!data/*sample*.csv
+!data/*test*.csv
+!data/*example*.csv
+
+# Excel files
+*.xlsx
+*.xls
+
+# Large data formats
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl.gz
+*.pickle.gz
+
+# ---------------------------------------------
+# Machine Learning
+# ---------------------------------------------
+# Large model files (keep modelo_credito.pkl as it's small)
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+*.pb
+
+# Model artifacts (logs, checkpoints)
+mlruns/
+runs/
+logs/
+checkpoints/
+models/experiments/
+wandb/
+
+# TensorBoard
+events.out.tfevents.*
+
+# ---------------------------------------------
+# Streamlit
+# ---------------------------------------------
+.streamlit/
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# ---------------------------------------------
+# Jupyter / Analysis
+# ---------------------------------------------
+# Jupyter cache
+.jupyter/
+*.ipynb_checkpoints
+
+# ---------------------------------------------
+# Project Specific
+# ---------------------------------------------
+# Generated visualizations (temporary/cache)
+# Note: confusion_matrix.png and roc_curve.png are kept for documentation
+*.tmp.png
+*.cache.png
+*_temp.png
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.bak
+*.swp
+
+# Test outputs
+test_output/
+test_results/
+
+# Credentials (if any)
+credentials.json
+secrets.json
+*.key
+*.pem
+
+# Database files
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# ---------------------------------------------
+# Docker
+# ---------------------------------------------
+# Docker volumes
+.docker/
+docker-volumes/
+
+# Docker build cache
+.dockercache/
+
+# ---------------------------------------------
+# Keep These Files (Exceptions)
+# ---------------------------------------------
+# Small model file (explicitly keep)
+!models/modelo_credito.pkl
+
+# Model documentation and training results
+!reports/MODEL_REPORT.md
+!reports/confusion_matrix.png
+!reports/roc_curve.png
+
+# Documentation
+!docs/*.md
+!docs/*.png
+!docs/*.jpg
+
+# README images
+!**/README*.png
+!**/README*.jpg

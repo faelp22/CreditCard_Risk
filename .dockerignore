@@ -1,0 +1,85 @@
+# ==============================================================================
+# .dockerignore - Arquivos excluídos do contexto de build do Docker
+# ==============================================================================
+
+# Ambientes virtuais Python
+.venv/
+venv/
+env/
+ENV/
+
+# Bytecode Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+notebooks/
+*.ipynb
+.ipynb_checkpoints/
+
+# Testes
+tests/
+test_*.py
+*_test.py
+
+# Documentação
+docs/
+*.md
+!README.md
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Reports (exceto imagens que podem ser úteis)
+reports/*.md
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Configurações locais
+.env
+.env.local
+*.local
+
+# Coverage
+.coverage
+htmlcov/
+
+# Build
+build/
+dist/
+*.egg-info/

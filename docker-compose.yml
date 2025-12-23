@@ -1,0 +1,78 @@
+services:
+  # ============================================
+  # Streamlit Application - Credit Risk Analysis
+  # ============================================
+  streamlit-app:
+    image: faelp22/credit-risk-analysis:latest
+    container_name: creditcard-risk-app
+
+    # Executar sem privilégios root
+    user: "1001:1001"
+
+    # Portas expostas
+    ports:
+      - "8502:8501"
+
+    # Variáveis de ambiente (sobrescrever se necessário)
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+      - STREAMLIT_SERVER_MAX_UPLOAD_SIZE=200
+      - STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=true
+      - PYTHONUNBUFFERED=1
+
+    # Limites de recursos (ajustar conforme necessário)
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+    # Política de reinicialização
+    restart: unless-stopped
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8501/_stcore/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Segurança adicional
+    security_opt:
+      - no-new-privileges:true
+
+    # Modo somente leitura no sistema de arquivos (exceto diretórios temporários)
+    read_only: true
+
+    # Volumes temporários (necessários para Streamlit)
+    tmpfs:
+      - /tmp
+      - /app/.streamlit/cache
+
+    # Rede
+    # networks:
+      # - creditrisk-network
+
+    # Logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+# ============================================
+# Redes
+# ============================================
+# networks:
+#   creditrisk-network:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 172.20.0.0/16
